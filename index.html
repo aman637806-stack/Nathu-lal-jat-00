@@ -1,0 +1,631 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="HALAL WORK WITH ZORO TRQDER - Stock market learning, market insights and trading education Telegram community." />
+  <title>HALAL WORK WITH ZORO TRQDER | Learning Community</title>
+
+  <!-- Google Fonts: Inter & Noto Nastaliq Urdu / Noto Sans Arabic for crisp Urdu rendering -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Arabic:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome 6 CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- =====================================================================
+       META PIXEL CODE PLACEHOLDER (Uncomment & replace YOUR_PIXEL_ID_HERE)
+       ===================================================================== -->
+  <!--
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'YOUR_PIXEL_ID_HERE');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID_HERE&ev=PageView&noscript=1" />
+  </noscript>
+  -->
+
+  <style>
+    /* =====================================================================
+       RESET & BASE VARIABLES
+       ===================================================================== */
+    :root {
+      --bg-top: #141836;
+      --bg-bottom: #090d16;
+      --card-bg: #13192b;
+      --card-border: rgba(124, 92, 255, 0.22);
+      --text-primary: #ffffff;
+      --text-secondary: #cbd5e1;
+      --text-muted: #8b96ad;
+      --cyan-accent: #22d3ee;
+      --purple-accent: #8b5cf6;
+      --btn-grad: linear-gradient(90deg, #7c3aed 0%, #3b82f6 52%, #1d9bf0 100%);
+      --btn-rect-grad: linear-gradient(90deg, #7e22ce 0%, #9333ea 45%, #3b82f6 100%);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html, body {
+      width: 100%;
+      min-height: 100vh;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-bottom);
+      background-image: radial-gradient(circle at 50% 0%, #1c224b 0%, #111630 38%, #090d16 78%);
+      background-repeat: no-repeat;
+      color: var(--text-primary);
+      overflow-x: hidden;
+      line-height: 1.55;
+    }
+
+    /* Container centered for mobile-first & clean desktop reading */
+    .page-wrapper {
+      width: 100%;
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 18px 18px 115px; /* Extra bottom padding for sticky bar */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* =====================================================================
+       TOP NAVBAR
+       ===================================================================== */
+    .navbar {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 4px 0 24px;
+    }
+
+    .brand-logo {
+      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      background: linear-gradient(90deg, #ffffff 0%, #38bdf8 55%, #22d3ee 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      white-space: nowrap;
+    }
+
+    .nav-badge {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      color: #d8b4fe;
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(168, 85, 247, 0.42);
+      background: rgba(139, 92, 246, 0.08);
+      white-space: nowrap;
+    }
+
+    /* =====================================================================
+       HERO SECTION
+       ===================================================================== */
+    .hero {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 42px;
+    }
+
+    /* Circular Avatar with Glowing Gradient Ring */
+    .avatar-ring {
+      position: relative;
+      width: 158px;
+      height: 158px;
+      border-radius: 50%;
+      padding: 4px;
+      background: linear-gradient(135deg, #22d3ee 0%, #3b82f6 35%, #a855f7 70%, #f59e0b 100%);
+      box-shadow:
+        0 0 28px rgba(56, 189, 248, 0.28),
+        0 0 48px rgba(168, 85, 247, 0.22);
+      margin-bottom: 24px;
+      animation: pulseGlow 4s ease-in-out infinite;
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% {
+        box-shadow: 0 0 25px rgba(56, 189, 248, 0.26), 0 0 42px rgba(168, 85, 247, 0.2);
+      }
+      50% {
+        box-shadow: 0 0 36px rgba(56, 189, 248, 0.4), 0 0 56px rgba(168, 85, 247, 0.34);
+      }
+    }
+
+    .avatar-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      overflow: hidden;
+      background-color: #0f172a;
+      border: 2px solid #0b0f1d;
+    }
+
+    .avatar-inner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-subtitle {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--cyan-accent);
+      margin-bottom: 10px;
+    }
+
+    .hero-title {
+      font-size: 1.72rem;
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      background: linear-gradient(90deg, #ffffff 35%, #a5f3fc 72%, #38bdf8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 16px;
+    }
+
+    .urdu-tagline {
+      font-family: 'Noto Sans Arabic', 'Inter', sans-serif;
+      direction: rtl;
+      font-size: 1.18rem;
+      font-weight: 600;
+      color: #e2e8f0;
+      line-height: 1.75;
+      margin-bottom: 16px;
+      padding: 0 6px;
+    }
+
+    .hero-description {
+      font-size: 0.93rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      max-width: 410px;
+      margin-bottom: 26px;
+    }
+
+    /* =====================================================================
+       BUTTON STYLES
+       ===================================================================== */
+    .btn-pill {
+      width: 100%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 15px 22px;
+      border-radius: 999px;
+      background: var(--btn-grad);
+      color: #ffffff;
+      font-size: 0.92rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      box-shadow: 0 10px 26px rgba(99, 102, 241, 0.36);
+      transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+      cursor: pointer;
+    }
+
+    .btn-pill:hover, .btn-pill:active {
+      transform: translateY(-2px) scale(0.99);
+      box-shadow: 0 14px 32px rgba(56, 189, 248, 0.42);
+      filter: brightness(1.06);
+    }
+
+    .btn-rect {
+      width: 100%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 15px 22px;
+      border-radius: 14px;
+      background: var(--btn-rect-grad);
+      color: #ffffff;
+      font-size: 0.92rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 10px 28px rgba(139, 92, 246, 0.35);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+      cursor: pointer;
+    }
+
+    .btn-rect:hover, .btn-rect:active {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 32px rgba(139, 92, 246, 0.48);
+    }
+
+    .btn-icon {
+      font-size: 1.05rem;
+    }
+
+    /* =====================================================================
+       SECTION 2: WHAT YOU'LL LEARN
+       ===================================================================== */
+    .learn-section {
+      width: 100%;
+      margin-bottom: 34px;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 22px;
+    }
+
+    .section-heading {
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+
+    .section-subheading {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+      max-width: 360px;
+      margin: 0 auto;
+    }
+
+    .cards-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .learn-card {
+      background: rgba(19, 25, 43, 0.88);
+      border: 1px solid rgba(99, 102, 241, 0.24);
+      border-radius: 18px;
+      padding: 22px 20px;
+      text-align: left;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .learn-card:hover {
+      border-color: rgba(34, 211, 238, 0.45);
+      transform: translateY(-2px);
+    }
+
+    .card-icon-wrap {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: rgba(34, 211, 238, 0.1);
+      border: 1px solid rgba(34, 211, 238, 0.22);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 14px;
+      font-size: 1.25rem;
+    }
+
+    .icon-bar {
+      color: #38bdf8;
+    }
+
+    .icon-line {
+      color: #f43f5e;
+    }
+
+    .icon-cap {
+      color: #fbbf24;
+    }
+
+    .card-title {
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 6px;
+    }
+
+    .card-text {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+    }
+
+    /* =====================================================================
+       SECTION 3: QUOTE CARD
+       ===================================================================== */
+    .quote-card {
+      width: 100%;
+      background: linear-gradient(145deg, rgba(28, 34, 68, 0.85) 0%, rgba(16, 22, 42, 0.95) 100%);
+      border: 1px solid rgba(139, 92, 246, 0.28);
+      border-radius: 20px;
+      padding: 28px 22px;
+      text-align: center;
+      margin-bottom: 36px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.32);
+    }
+
+    .quote-urdu {
+      font-family: 'Noto Sans Arabic', 'Inter', sans-serif;
+      direction: rtl;
+      font-size: 1.22rem;
+      font-weight: 600;
+      color: #f1f5f9;
+      line-height: 1.85;
+      margin-bottom: 14px;
+    }
+
+    .quote-english {
+      font-size: 0.98rem;
+      font-weight: 500;
+      color: #e2e8f0;
+      line-height: 1.6;
+    }
+
+    /* =====================================================================
+       SECTION 4: COMMUNITY CTA
+       ===================================================================== */
+    .community-section {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .community-heading {
+      font-size: 1.48rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+
+    .community-text {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      max-width: 370px;
+      margin: 0 auto 22px;
+    }
+
+    /* =====================================================================
+       FOOTER DISCLAIMER
+       ===================================================================== */
+    .disclaimer {
+      width: 100%;
+      text-align: center;
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      padding: 0 6px;
+    }
+
+    /* =====================================================================
+       STICKY BOTTOM FLOATING BAR
+       ===================================================================== */
+    .sticky-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 999;
+      background: linear-gradient(180deg, rgba(9, 13, 22, 0) 0%, rgba(9, 13, 22, 0.95) 28%, #090d16 100%);
+      padding: 12px 16px 10px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .sticky-inner {
+      width: 100%;
+      max-width: 480px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .sticky-subtext {
+      font-size: 0.68rem;
+      color: #94a3b8;
+      letter-spacing: 0.02em;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <main class="page-wrapper">
+    <!-- TOP NAVBAR -->
+    <header class="navbar">
+      <div class="brand-logo">ZORO TRADER</div>
+      <div class="nav-badge">LEARN • ANALYSE • GROW</div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" aria-label="Introduction">
+      <div class="avatar-ring">
+        <div class="avatar-inner">
+          <img
+            src="https://i.ibb.co/v4ZtV7ZQ/1794277279226.png"
+            alt="HALAL WORK WITH ZORO TRQDER"
+            loading="eager"
+            onerror="this.onerror=null; this.src='https://placehold.co/300x300/13192b/22d3ee?text=ZORO+TRADER';"
+          />
+        </div>
+      </div>
+
+      <p class="hero-subtitle">WELCOME TO THE LEARNING COMMUNITY</p>
+      <h1 class="hero-title">HALAL WORK WITH ZORO TRQDER</h1>
+
+      <p class="urdu-tagline" lang="ur">
+        اسٹاک مارکیٹ سیکھیں، سمجھیں اور بہتر فیصلے کریں
+      </p>
+
+      <p class="hero-description">
+        Your space for stock market learning, market insights and trading education. Learn the basics, understand charts and build your knowledge step by step.
+      </p>
+
+      <a
+        href="https://t.me/+VGQ447AT-k4xY2Q1"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-pill telegram-cta"
+        data-cta-location="hero_primary"
+      >
+        <i class="fa-solid fa-paper-plane btn-icon" aria-hidden="true"></i>
+        <span>JOIN TELEGRAM CHANNEL</span>
+      </a>
+    </section>
+
+    <!-- SECTION 2: WHAT YOU'LL LEARN -->
+    <section class="learn-section" aria-labelledby="learn-heading">
+      <div class="section-header">
+        <h2 id="learn-heading" class="section-heading">What You’ll Learn</h2>
+        <p class="section-subheading">
+          Simple learning. Useful insights. A stronger understanding of the stock market.
+        </p>
+      </div>
+
+      <div class="cards-stack">
+        <!-- Card 1 -->
+        <article class="learn-card">
+          <div class="card-icon-wrap">
+            <i class="fa-solid fa-chart-column icon-bar" aria-hidden="true"></i>
+          </div>
+          <h3 class="card-title">Market Analysis</h3>
+          <p class="card-text">
+            Understand market trends, price movements and important market levels.
+          </p>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="learn-card">
+          <div class="card-icon-wrap">
+            <i class="fa-solid fa-chart-line icon-line" aria-hidden="true"></i>
+          </div>
+          <h3 class="card-title">Technical Analysis</h3>
+          <p class="card-text">
+            Learn chart patterns, indicators, support, resistance and risk management.
+          </p>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="learn-card">
+          <div class="card-icon-wrap">
+            <i class="fa-solid fa-graduation-cap icon-cap" aria-hidden="true"></i>
+          </div>
+          <h3 class="card-title">Trading Education</h3>
+          <p class="card-text">
+            Build your knowledge with learning-focused explanations and regular updates.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- SECTION 3: QUOTE CARD -->
+    <section class="quote-card" aria-label="Trading Wisdom">
+      <p class="quote-urdu" lang="ur">
+        علم کے ساتھ تجارت کریں، جلد بازی سے نہیں۔
+      </p>
+      <p class="quote-english">
+        “Learn first. Analyse carefully. Make informed decisions.”
+      </p>
+    </section>
+
+    <!-- SECTION 4: BE PART OF OUR COMMUNITY -->
+    <section class="community-section" aria-labelledby="community-heading">
+      <h2 id="community-heading" class="community-heading">Be Part of Our Community</h2>
+      <p class="community-text">
+        Join the Telegram channel for stock market learning content and market-related updates.
+      </p>
+
+      <a
+        href="https://t.me/+VGQ447AT-k4xY2Q1"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-rect telegram-cta"
+        data-cta-location="community_section"
+      >
+        <i class="fa-solid fa-paper-plane btn-icon" aria-hidden="true"></i>
+        <span>JOIN OUR TELEGRAM CHANNEL</span>
+      </a>
+    </section>
+
+    <!-- FOOTER DISCLAIMER -->
+    <footer class="disclaimer">
+      Disclaimer: This page is for educational and informational purposes only. We do not promise or guarantee profits or returns. Stock market investments are subject to market risks. Please do your own research and consult a qualified financial advisor before making investment decisions.
+    </footer>
+  </main>
+
+  <!-- STICKY BOTTOM FLOATING BAR -->
+  <div class="sticky-bar">
+    <div class="sticky-inner">
+      <a
+        href="https://t.me/+VGQ447AT-k4xY2Q1"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-pill telegram-cta"
+        data-cta-location="sticky_bottom"
+      >
+        <i class="fa-solid fa-paper-plane btn-icon" aria-hidden="true"></i>
+        <span>JOIN TELEGRAM CHANNEL</span>
+      </a>
+      <span class="sticky-subtext">Free learning updates • Join our community</span>
+    </div>
+  </div>
+
+  <!-- CLICK TRACKING SCRIPT FOR META PIXEL / ANALYTICS -->
+  <script>
+    (function () {
+      const ctaButtons = document.querySelectorAll('.telegram-cta');
+
+      ctaButtons.forEach(function (button) {
+        button.addEventListener('click', function () {
+          const location = button.getAttribute('data-cta-location') || 'unknown';
+
+          // Trigger Meta Pixel Lead / Subscribe event if fbq is initialized
+          if (typeof window.fbq === 'function') {
+            window.fbq('track', 'Lead', {
+              content_name: 'HALAL WORK WITH ZORO TRQDER',
+              content_category: 'Telegram Community',
+              button_location: location
+            });
+          }
+
+          // Trigger Google Analytics / gtag event if available
+          if (typeof window.gtag === 'function') {
+            window.gtag('event', 'join_telegram_click', {
+              event_category: 'engagement',
+              event_label: location
+            });
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
+```
